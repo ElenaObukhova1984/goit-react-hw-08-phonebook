@@ -1,15 +1,14 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import { nanoid } from 'nanoid';
 import { ContactList,ContactItem,DelButton,Contact } from "./ContactList.styled";
 
 
-const Contacts=({ contacts, onDelete, })=> {
+export default function Contacts ({ contacts, onDelete }) {
     return (
-       
-            <div>
-                <ContactList >
-                    {contacts.map(({ id, name, number }) => (
-                        <ContactItem key={id}>
+                <ContactList>
+            {contacts.map(({ id, name, number }) => (
+                        <ContactItem key={nanoid()}>
                             <Contact>{name}:</Contact>
                             <Contact>{number}</Contact>
                             <DelButton
@@ -19,8 +18,8 @@ const Contacts=({ contacts, onDelete, })=> {
                             </DelButton>
                         </ContactItem>
                     ))}
-                </ContactList >
-            </div>
+                </ContactList>
+            
       
     );
 };
@@ -36,4 +35,3 @@ Contacts.protoType = {
     })).isRequired
 }
 
-export default Contacts;
