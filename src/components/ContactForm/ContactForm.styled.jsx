@@ -11,7 +11,7 @@ height: auto;
 export const Input = styled.input`
 height: 30px;
 width: 350px;
-
+margin-left: 10px;
 margin-top: 10px;
 border-radius: 10px;
 `;
