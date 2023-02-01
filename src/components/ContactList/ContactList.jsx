@@ -1,37 +1,35 @@
-import React from "react";
-import PropTypes from 'prop-types';
-import { nanoid } from 'nanoid';
-import { ContactList,ContactItem,DelButton,Contact } from "./ContactList.styled";
+import { useSelector } from 'react-redux';
+import { getContacts } from '../../redux/contactsSlice';
+import { getFilter } from '../../redux/filterSlice';
+import ContactItem from 'components/ContactItem';
+import { List, Item } from './ContactList.styled';
 
+//----Получаем подходящие контакты----
+function getVisibleContacts(contacts, filter) {
+  const normalizedFilter = filter.toLowerCase();
 
-export default function Contacts ({ contacts, onDelete }) {
-    return (
-                <ContactList>
-            {contacts.map(({ id, name, number }) => (
-                        <ContactItem key={nanoid()}>
-                            <Contact>{name}:</Contact>
-                            <Contact>{number}</Contact>
-                            <DelButton
-                                type='button'
-                                onClick={() => onDelete(id)}>
-                                Delete
-                            </DelButton>
-                        </ContactItem>
-                    ))}
-                </ContactList>
-            
-      
-    );
+  return contacts.filter(contact =>
+    contact.name.toLowerCase().includes(normalizedFilter)
+  );
+}
+
+ const ContactsList = () => {
+  const contacts = useSelector(getContacts);
+  const filter = useSelector(getFilter);
+  const visibleContacts = getVisibleContacts(contacts, filter);
+
+  //----Рендер----
+  return  (
+    <List>
+      {visibleContacts.map(contact => (
+        <Item key={contact.id}>
+          <ContactItem contact={contact} />
+        </Item>
+      ))}
+    </List>
+  ) 
+
 };
 
 
-
-Contacts.protoType = {
-    onDelete: PropTypes.func.isRequired,
-    contacts: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.string,
-        name: PropTypes.string,
-        number: PropTypes.string,
-    })).isRequired
-}
-
+export default ContactsList;
