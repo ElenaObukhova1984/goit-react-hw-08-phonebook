@@ -1,15 +1,15 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { onFilter} from 'redux/filterSlice';
-import {getFilter} from 'redux/selectors';
+import { changeFilter } from 'redux/filterSlice';
+import { selectFilter } from 'redux/selectors';
 import { Input, Label } from "./Filter.styled";
 
 
 const Filter = () => {
   const dispatch = useDispatch();
-  const filter = useSelector(getFilter);
+  const filter = useSelector(selectFilter);
  
   const inputFilter=(event)=> {
-    dispatch(onFilter(event.currentTarget.value));
+    dispatch(changeFilter(event.currentTarget.value));
   }
   return (
     <Label>
