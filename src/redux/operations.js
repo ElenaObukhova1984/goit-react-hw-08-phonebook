@@ -6,9 +6,9 @@ axios.defaults.baseURL = 'https://63dbd0c5b8e69785e48bc641.mockapi.io';
 export const addContact = createAsyncThunk(
   'contacts/addContact',
   async (contact, thunkAPI) => {
-    const { name, number } = contact;
+    const { name, phone } = contact;
     try {
-      const response = await axios.post('/contacts', { name, phone: number });
+      const response = await axios.post('/contacts', { name, phone });
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

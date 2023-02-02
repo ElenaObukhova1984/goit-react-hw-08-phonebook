@@ -6,23 +6,32 @@ import { Form,Input,AddButton } from "./ContactForm.styled";
 
 
 const ContactForm = () => {
+ const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
-  const dispatch = useDispatch();
 
-  const onSubmit = contact => {
-    dispatch(addContact(contact));
-  };
+ 
+  function handleSubmit(event) {
+    event.preventDefault();
 
-  const handleSubmit = (values, { resetForm }) => {
-    if (contacts.some(contact => contact.name === values.name)) {
-      alert(`${values.name} is already in contacts`);
+    const form = event.target;
+
+    if (
+      contacts.map(contact => contact.name).includes(form.elements.name.value)
+    ) {
+      alert(
+        `${form.elements.name.value} is already in contacts.`
+      );
     } else {
-      onSubmit(values);
+      dispatch(
+        addContact({
+          name: form.elements.name.value,
+          phone: form.elements.number.value,
+        })
+      );
     }
 
-    resetForm();
-  };
-
+    form.reset();
+  }
   return (
     <Form onSubmit={handleSubmit}>
       <label>
