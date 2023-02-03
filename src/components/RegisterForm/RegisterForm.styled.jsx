@@ -11,12 +11,12 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  border-color: purple;
+  border-color: #5b4f5b;
   margin-top: 5px;
   border: 1px solid purple;
   background-color: white;
   &:focus {
-    border-color: blue;
+    border-color: #2b2b83;
     background-color: white;
   }
 `;
@@ -26,5 +26,5 @@ export const Button = styled.button`
   border-radius: 3px;
   border: 1px solid purple;
   color: white;
-  background: purple;
+  background: #b592b5;
 `;
