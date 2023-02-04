@@ -8,8 +8,7 @@ const RegisterForm = () => {
   const handleSubmit = event => {
     event.preventDefault();
     const form = event.currentTarget;
-    dispatch(
-      register({
+    dispatch(register({
         name: form.elements.name.value,
         email: form.elements.email.value,
         password: form.elements.password.value,

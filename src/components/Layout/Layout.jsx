@@ -6,14 +6,14 @@ import  UserMenu  from '../UserMenu';
 import  AuthNav  from '../AuthNav';
 import { Header, Container } from './Layout.styled';
 
-export const Layout = () => {
+const Layout = () => {
   const { isLoggedIn } = useAuth();
 
   return (
     <Container>
       <Header>
         <Navigation />
-        {isLoggedIn ? <UserMenu /> : <AuthNav />}
+        {isLoggedIn ? <UserMenu/> : <AuthNav />}
       </Header>
       <Suspense fallback={null}>
         <Outlet />
