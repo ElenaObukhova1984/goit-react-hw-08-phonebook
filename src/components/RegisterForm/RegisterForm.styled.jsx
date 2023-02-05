@@ -11,7 +11,7 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  border-color: #5b4f5b;
+  border-color: #746874;
   margin-top: 5px;
   border: 1px solid purple;
   background-color: white;
@@ -26,5 +26,5 @@ export const Button = styled.button`
   border-radius: 3px;
   border: 1px solid purple;
   color: white;
-  background: #b592b5;
+  background: #746874;
 `;

@@ -25,7 +25,7 @@ const ContactForm = () => {
       dispatch(
         addContact({
           name: form.elements.name.value,
-          phone: form.elements.number.value,
+          number: form.elements.number.value,
         })
       );
     }
@@ -36,8 +36,8 @@ const ContactForm = () => {
     <Form onSubmit={handleSubmit}>
       <label>
         Name
+      </label>
         <Input
-          
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -45,9 +45,10 @@ const ContactForm = () => {
           required
           
         />
-      </label>
+      
       <label>
         Number
+        </label>
         <Input
           
           type="tel"
@@ -57,7 +58,7 @@ const ContactForm = () => {
           required
           
         />
-      </label>
+      
       <AddButton type="submit">Add contact</AddButton>
      
     </Form>

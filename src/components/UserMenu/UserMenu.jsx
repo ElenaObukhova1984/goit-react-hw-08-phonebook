@@ -3,7 +3,7 @@ import { logOut } from 'redux/auth/operations';
 import { useAuth } from '../../hooks/useAuth';
 import { Wrapper, UserName, Button } from './UserMenu.styled';
 
-const UserMenu = () => {
+export const UserMenu = () => {
   const dispatch = useDispatch();
   const { user } = useAuth();
 
@@ -17,4 +17,3 @@ const UserMenu = () => {
   );
 };
 
-export default UserMenu;

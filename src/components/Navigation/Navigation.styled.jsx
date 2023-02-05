@@ -9,7 +9,7 @@ export const Box = styled.div`
   min-height: 15px;
   margin-right: 10px;
   padding: 5px;
-  background: #6d6c9e;
+  background: #746874;
 `;
 
 export const Link = styled(NavLink)`

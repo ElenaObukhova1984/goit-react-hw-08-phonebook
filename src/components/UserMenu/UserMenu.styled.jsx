@@ -15,5 +15,5 @@ export const Button = styled.button`
   border-radius: 3px;
   border: 1px solid purple;
   color: white;
-  background: purple;
+  background: #695f69;
 `;

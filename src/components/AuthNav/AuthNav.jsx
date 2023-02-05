@@ -1,6 +1,6 @@
 import { Link, Box, Wrapper } from './AuthNav.styled';
 
- const AuthNav = () => {
+ export const AuthNav = () => {
   return (
     <Wrapper>
       <Box>
@@ -13,4 +13,3 @@ import { Link, Box, Wrapper } from './AuthNav.styled';
   );
 };
 
-export default AuthNav;

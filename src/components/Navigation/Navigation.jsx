@@ -1,7 +1,7 @@
 import { useAuth } from 'hooks/useAuth';
 import { Link, Box, Wrapper } from './Navigation.styled';
 
- const Navigation = () => {
+ export const Navigation = () => {
   const { isLoggedIn } = useAuth();
 
   return (
@@ -20,4 +20,3 @@ import { Link, Box, Wrapper } from './Navigation.styled';
   );
 };
 
-export default Navigation;

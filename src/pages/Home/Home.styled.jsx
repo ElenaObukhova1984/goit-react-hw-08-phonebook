@@ -6,7 +6,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   color: white;
-  background: purple;
+  background: #746874;
 `;
 
 export const Title = styled.h1`

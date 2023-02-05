@@ -1,12 +1,12 @@
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
-import  Navigation  from '../Navigation';
+import { Navigation }  from '../Navigation/Navigation';
 import { useAuth } from 'hooks/useAuth';
-import  UserMenu  from '../UserMenu';
-import  AuthNav  from '../AuthNav';
+import { UserMenu }  from '../UserMenu/UserMenu';
+import { AuthNav }  from '../AuthNav/AuthNav';
 import { Header, Container } from './Layout.styled';
 
-const Layout = () => {
+export const Layout = () => {
   const { isLoggedIn } = useAuth();
 
   return (
@@ -22,4 +22,3 @@ const Layout = () => {
   );
 };
 
-export default Layout;
