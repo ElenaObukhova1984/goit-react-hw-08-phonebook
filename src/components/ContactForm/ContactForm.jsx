@@ -3,23 +3,16 @@ import {addContact} from 'redux/contacts/operations';
 import {selectContacts } from 'redux/contacts/selectors';
 import { Form,Input,AddButton } from "./ContactForm.styled";
 
-
-
 const ContactForm = () => {
- const dispatch = useDispatch();
-  const contacts = useSelector(selectContacts);
+const dispatch = useDispatch();
+const contacts = useSelector(selectContacts);
 
- 
   function handleSubmit(event) {
     event.preventDefault();
-
     const form = event.target;
-
-    if (
-      contacts.map(contact => contact.name).includes(form.elements.name.value)
+    if (contacts.map(contact => contact.name).includes(form.elements.name.value)
     ) {
-      alert(
-        `${form.elements.name.value} is already in contacts.`
+      alert(`${form.elements.name.value} is already in contacts.`
       );
     } else {
       dispatch(
@@ -50,7 +43,6 @@ const ContactForm = () => {
         Number
         </label>
         <Input
-          
           type="tel"
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"

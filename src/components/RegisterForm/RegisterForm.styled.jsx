@@ -11,9 +11,11 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  border-color: #746874;
+ min-height: 30px;
+ border-radius:4px;
+ border-color: #243c78;
   margin-top: 5px;
-  border: 1px solid purple;
+  border: 2px solid blue;
   background-color: white;
   &:focus {
     border-color: #2b2b83;
@@ -22,9 +24,10 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
+  min-height: 30px;
   font-size: 16px;
   border-radius: 3px;
-  border: 1px solid purple;
+  border: 1px solid blue;
   color: white;
-  background: #746874;
+  background: #243c78;
 `;
