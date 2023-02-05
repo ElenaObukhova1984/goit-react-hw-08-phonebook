@@ -8,9 +8,15 @@ width: 100%;
 height: auto;
 `;
 
+export const Label = styled.label`
+margin-top: 5px;
+
+`;
+
 export const Input = styled.input`
 min-height: 30px;
 width:400px;
+
  border-radius:4px;
  border-color: #243c78;
   margin-top: 5px;
@@ -25,9 +31,8 @@ width:400px;
 
 export const AddButton = styled.button`
 
-
 height: 30px;
 width: 150px;
 margin-top: 10px;
-border-radius: 10px;
+border-radius: 4px;
 `;

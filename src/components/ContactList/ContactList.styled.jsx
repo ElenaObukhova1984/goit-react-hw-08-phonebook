@@ -6,8 +6,10 @@ height: 100px;
 `;
 
 export const Item= styled.li`
+max-width:400px;
 display: flex;
-
+justify-content:space-between;
+font-weight:700;
 gap: 15px;
 align-items: center;
 

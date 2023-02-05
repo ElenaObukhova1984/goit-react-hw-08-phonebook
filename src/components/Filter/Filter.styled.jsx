@@ -13,8 +13,10 @@ border-radius:4px;
     border-color: #2b2b83;
     background-color: white;
   }
+  margin-top:30px;
 `;
 
 export const Label = styled.label`
 width:100px;
+
 `;
